@@ -70,7 +70,7 @@ p {
 
 .project a {
     display: inline-block;
-    background-color: #333;
+    background-color: #333; /*this changes the view button color*/
     color: #fff;
     padding: 10px 20px;
     text-decoration: none;
