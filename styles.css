@@ -16,8 +16,16 @@ body {
 nav {
     background-color: #333;
     padding: 10px 0;
+    position: fixed; /* Make the nav fixed at the top */
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures it stays above other elements */
 }
 
+/* Ensure the content does not go behind the nav */
+body {
+    margin-top: 60px; /* Adjust this to the height of your nav */
+}
 nav ul {
     list-style-type: none;
     text-align: center;
