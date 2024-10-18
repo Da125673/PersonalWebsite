@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading...</title>
+    <style>
+        /* Terminal Styles */
+        body {
+            background-color: black; /* Terminal background */
+            color: #33ff00; /* Terminal text color */
+            font-family: 'Courier New', Courier, monospace; /* Monospace font for terminal look */
+            margin: 0;
+            overflow: hidden; /* Hide overflow */
+            height: 100vh; /* Full height of the viewport */
+            display: flex;
+            align-items: flex-start; /* Align items to the top */
+            padding: 20px; /* Add padding from the top and left */
+        }
+
+        #loading-screen {
+            white-space: pre; /* Maintain formatting */
+        }
+
+        /* Cursor effect */
+        #cursor {
+            display: inline-block;
+            width: 12px;
+            height: 24px;
+            background-color: #33ff00; /* Cursor color */
+            animation: blink 0.7s step-end infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="loading-screen">
+        <span>$ </span><span id="status"></span><span id="cursor"></span>
+    </div>
+
+    <script>
+        const status = document.getElementById('status');
+        const messages = [
+            "[OK] Site loading",
+            "Loading . . .",
+            "[ERROR] Something is wrong",
+            "[OK] Trying again",
+            "Loading . . .",
+            "[OK] This is odd",
+            "Loading . . .",
+            "[OK] Why won't this work",
+            "Loading . . .",
+            "[OK] This is frustrating",
+            "Loading . . .",
+            "[ERROR] Failed again this programmer sucks",
+            ". . .",
+            ". . .",
+            "[ERROR] Won't wor...",
+            "[OK] Oh it worked",
+            "[OK] Maybe the programmer is smart",
+            "[OK] Please press ENTER/RETURN to proceed"
+        ];
+
+        let index = 0;
+
+        function updateStatus() {
+            if (index < messages.length) {
+                status.textContent += messages[index] + '\n';
+                index++;
+                setTimeout(updateStatus, 2000); // Display the next message every 2 seconds
+            } else {
+                // Wait for user to press Enter or Return key before redirecting
+                document.addEventListener('keypress', function (event) {
+                    if (event.key === 'Enter' || event.key === 'Return') {
+                        window.location.href = 'portfolio.html'; // Change this to the name of your portfolio file
+                    }
+                });
+            }
+        }
+
+        // Start updating the status
+        updateStatus();
+    </script>
+</body>
+</html>
