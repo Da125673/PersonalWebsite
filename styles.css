@@ -116,3 +116,32 @@ button:hover {
 }
 
 /* add the code given to you by chatgpt that goes along with your photo*/
+/* About Photo Animation Styles */
+.about-photo {
+    width: 300px;  /* Set the desired width in pixels */
+    height: auto;  /* Maintain aspect ratio */
+    position: relative;
+    display: block;
+    margin: 20px auto;
+    opacity: 0;
+    transform: translateX(-100%); /* Start offscreen (left side) */
+    transition: opacity 1s ease-in-out;
+    animation: slide-in 2s ease-out forwards; /* Trigger the sliding animation */
+}
+
+/* Slide-in keyframes (from left to center) */
+@keyframes slide-in {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%); /* Offscreen to the left */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0); /* Final position in the center */
+    }
+}
+
+/* When the body gets the 'loaded' class, trigger the animation */
+body.loaded .about-photo {
+    opacity: 1;  /* Ensures visibility */
+}
