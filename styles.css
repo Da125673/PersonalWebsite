@@ -46,29 +46,29 @@ nav ul li a {
     font-size: 18px;
 }
 
-/* For LinkedIn and Handshake logos alignment on the right */
+/* For LinkedIn, Handshake, and GitHub logos alignment on the right */
 nav ul.nav-left {
     display: flex;
 }
 
 nav ul.nav-right {
-    margin-left: auto; /* Pushes LinkedIn and Handshake logos to the right */
+    margin-left: auto; /* Pushes LinkedIn, Handshake, and GitHub logos to the right */
     display: flex;
-    gap: 20px; /* Adds space between LinkedIn and Handshake logos */
+    gap: 20px; /* Adds space between logos */
 }
 
 nav ul.nav-right li {
     display: inline-block;
 }
 
-/* LinkedIn and Handshake logo styling */
-.linkedin-logo, .handshake-logo {
+/* LinkedIn, Handshake, and GitHub logo styling */
+.linkedin-logo, .handshake-logo, .github-logo {
     width: 24px; /* Adjust the size as necessary */
     height: 24px;
     vertical-align: middle;
 }
 
-.linkedin-logo:hover, .handshake-logo:hover {
+.linkedin-logo:hover, .handshake-logo:hover, .github-logo:hover {
     filter: brightness(1.2); /* Brightens the logos on hover */
 }
 
@@ -213,4 +213,10 @@ label {
     font-weight: bold;
     margin-bottom: 5px;
     display: inline-block;
+}
+
+/* Centering styles */
+.text-center {
+    text-align: center; /* Centers the text */
+    margin-bottom: 20px; /* Optional: Adds space below the centered text */
 }
