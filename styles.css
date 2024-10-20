@@ -145,3 +145,44 @@ button:hover {
 body.loaded .about-photo {
     opacity: 1;  /* Ensures visibility */
 }
+
+
+/* Contact Form Styles */
+form {
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 20px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Labels styling */
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: inline-block;
+}
