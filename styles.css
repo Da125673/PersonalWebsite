@@ -20,12 +20,16 @@ nav {
     top: 0;
     width: 100%;
     z-index: 1000; /* Ensures it stays above other elements */
+    display: flex;
+    justify-content: space-between; /* Align left and right navs */
+    align-items: center;
 }
 
 /* Ensure the content does not go behind the nav */
 body {
     margin-top: 60px; /* Adjust this to the height of your nav */
 }
+
 nav ul {
     list-style-type: none;
     text-align: center;
@@ -40,6 +44,32 @@ nav ul li a {
     color: #fff;
     text-decoration: none;
     font-size: 18px;
+}
+
+/* For LinkedIn and Handshake logos alignment on the right */
+nav ul.nav-left {
+    display: flex;
+}
+
+nav ul.nav-right {
+    margin-left: auto; /* Pushes LinkedIn and Handshake logos to the right */
+    display: flex;
+    gap: 20px; /* Adds space between LinkedIn and Handshake logos */
+}
+
+nav ul.nav-right li {
+    display: inline-block;
+}
+
+/* LinkedIn and Handshake logo styling */
+.linkedin-logo, .handshake-logo {
+    width: 24px; /* Adjust the size as necessary */
+    height: 24px;
+    vertical-align: middle;
+}
+
+.linkedin-logo:hover, .handshake-logo:hover {
+    filter: brightness(1.2); /* Brightens the logos on hover */
 }
 
 /* Main Content Section Styles */
@@ -115,7 +145,6 @@ button:hover {
     background-color: #45a049; /* Darker green on hover */
 }
 
-/* add the code given to you by chatgpt that goes along with your photo*/
 /* About Photo Animation Styles */
 .about-photo {
     width: 300px;  /* Set the desired width in pixels */
@@ -145,7 +174,6 @@ button:hover {
 body.loaded .about-photo {
     opacity: 1;  /* Ensures visibility */
 }
-
 
 /* Contact Form Styles */
 form {
