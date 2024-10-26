@@ -10,66 +10,60 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: #ffffff; /* Changes background */
+    margin-top: 60px; /* Adjust this to the height of your nav */
 }
 
 /* Navigation Styles */
-nav {
-    background-color: #333;
+.navbar {
+    background-color: #333 !important; /* Customize navbar background */
     padding: 10px 0;
     position: fixed; /* Make the nav fixed at the top */
     top: 0;
     width: 100%;
-    z-index: 1000; /* Ensures it stays above other elements */
+    z-index: 1000;
     display: flex;
-    justify-content: space-between; /* Align left and right navs */
+    justify-content: space-between;
     align-items: center;
 }
 
-/* Ensure the content does not go behind the nav */
-body {
-    margin-top: 60px; /* Adjust this to the height of your nav */
+/* Navbar link styles */
+.navbar .nav-link {
+    color: #ff0000 !important; /* Navbar link color */
+    font-size: 18px;
 }
 
-nav ul {
+.navbar .nav-link:hover {
+    color: #ffffff !important; /* Navbar link hover color */
+}
+
+.navbar .nav-link.active {
+    color: #ffc107 !important; /* Active link color */
+}
+
+/* Navbar logo styles (left and right) */
+.navbar ul.nav-left, .navbar ul.nav-right {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar ul.nav-right {
+    margin-left: auto;
+}
+
+.navbar ul {
     list-style-type: none;
     text-align: center;
 }
 
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-/* For LinkedIn, Handshake, and GitHub logos alignment on the right */
-nav ul.nav-left {
-    display: flex;
-}
-
-nav ul.nav-right {
-    margin-left: auto; /* Pushes LinkedIn, Handshake, and GitHub logos to the right */
-    display: flex;
-    gap: 20px; /* Adds space between logos */
-}
-
-nav ul.nav-right li {
-    display: inline-block;
-}
-
 /* LinkedIn, Handshake, and GitHub logo styling */
 .linkedin-logo, .handshake-logo, .github-logo {
-    width: 24px; /* Adjust the size as necessary */
+    width: 24px;
     height: 24px;
     vertical-align: middle;
 }
 
 .linkedin-logo:hover, .handshake-logo:hover, .github-logo:hover {
-    filter: brightness(1.2); /* Brightens the logos on hover */
+    filter: brightness(1.2);
 }
 
 /* Main Content Section Styles */
@@ -108,7 +102,7 @@ p {
 
 .project a {
     display: inline-block;
-    background-color: #333; /*this changes the view button color*/
+    background-color: #333;
     color: #fff;
     padding: 10px 20px;
     text-decoration: none;
@@ -128,7 +122,7 @@ footer {
 
 /* Download Button Styles */
 button {
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50;
     border: none;
     color: white;
     padding: 10px 20px;
@@ -142,37 +136,36 @@ button {
 }
 
 button:hover {
-    background-color: #45a049; /* Darker green on hover */
+    background-color: #45a049;
 }
 
 /* About Photo Animation Styles */
 .about-photo {
-    width: 300px;  /* Set the desired width in pixels */
-    height: auto;  /* Maintain aspect ratio */
+    width: 300px;
+    height: auto;
     position: relative;
     display: block;
     margin: 20px auto;
     opacity: 0;
-    transform: translateX(-100%); /* Start offscreen (left side) */
+    transform: translateX(-100%);
     transition: opacity 1s ease-in-out;
-    animation: slide-in 2s ease-out forwards; /* Trigger the sliding animation */
+    animation: slide-in 2s ease-out forwards;
 }
 
-/* Slide-in keyframes (from left to center) */
+/* Slide-in keyframes */
 @keyframes slide-in {
     0% {
         opacity: 0;
-        transform: translateX(-100%); /* Offscreen to the left */
+        transform: translateX(-100%);
     }
     100% {
         opacity: 1;
-        transform: translateX(0); /* Final position in the center */
+        transform: translateX(0);
     }
 }
 
-/* When the body gets the 'loaded' class, trigger the animation */
 body.loaded .about-photo {
-    opacity: 1;  /* Ensures visibility */
+    opacity: 1;
 }
 
 /* Contact Form Styles */
@@ -217,11 +210,6 @@ label {
 
 /* Centering styles */
 .text-center {
-    text-align: center; /* Centers the text */
-    margin-bottom: 20px; /* Optional: Adds space below the centered text */
-}
-
-/* Override Bootstrap navbar styles */
-.navbar {
-    background-color: #333; /* Your custom color */
+    text-align: center;
+    margin-bottom: 20px;
 }
