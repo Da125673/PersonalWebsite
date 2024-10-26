@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daniel Almanza - Portfolio</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="styles.css"> <!-- Your custom CSS file -->
+
 </head>
 <body>
 
@@ -12,103 +14,96 @@
     <div id="loading-container"></div>
 
     <!-- Navigation Section -->
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="resume.html">Resume</a></li> <!-- Link to the Resume page -->
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-
-        <ul class="nav-right">
-            <li>
-                <a href="https://www.linkedin.com/in/daniel-almanza04/" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" class="linkedin-logo">
-                </a>
-            </li>
-
-            <li>
-                <a href="https://app.joinhandshake.com/profiles/43360503" target="_blank">
-                    <img src="HandShake_logo.webp" alt="Handshake" class="handshake-logo">
-                </a>
-            </li>
-
-            <li>
-                <a href="https://github.com/Da125673" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" class="github-logo">
-            </a>
-            </li>
-            
-        </ul>
-
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="#">Daniel Almanza</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+            <ul class="navbar-nav ml-auto nav-right">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.linkedin.com/in/daniel-almanza04/" target="_blank">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" class="linkedin-logo">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://app.joinhandshake.com/profiles/43360503" target="_blank">
+                        <img src="HandShake_logo.webp" alt="Handshake" class="handshake-logo">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/Da125673" target="_blank">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" class="github-logo">
+                    </a>
+                </li>
+            </ul>
+        </div>
     </nav>
 
     <!-- Main Content Sections -->
-    <section id="about">
-        <div class="container">
+    <div class="container my-5" style="margin-top: 70px;"> <!-- Added margin to avoid nav overlap -->
+        <section id="about">
             <h1>About Me</h1>
-            <p>Welcome to my portfolio website! I'm Daniel Almanza, a up and comming programer who wants to learn more.</p>
-            <!-- Add more details about yourself here -->
+            <p>Welcome to my portfolio website! I'm Daniel Almanza, an upcoming programmer who wants to learn more.</p>
+            <img src="Resume_Photo.jpeg" alt="A description of the image" class="about-photo img-fluid">
+        </section>
 
-            <!--This is where you photo is-->
-            <img src= "Resume_Photo.jpeg" alt="A description of the image" class="about-photo">
-
-        </div>
-    </section>
-
-    <section id="portfolio">
-        <div class="container">
+        <section id="portfolio" class="my-5">
             <h1>Portfolio</h1>
-            <!-- Showcase your projects here -->
             <div class="project">
                 <h2>Project Page</h2>
                 <p>Click button to see my Projects</p>
-                <a href="ViewProject.html">View Project</a>
+                <a href="ViewProject.html" class="btn btn-primary">View Project</a>
             </div>
-            
-        </div>
-    </section>
+        </section>
 
-    <section id="contact">
-        <div class="container">
-            
-            <div class="text-center"> <!-- Added div for centering -->
+        <section id="contact" class="my-5">
+            <div class="text-center">
                 <h1>Let's connect</h1>
                 <p>Feel free to send an email if you would like to connect</p>
             </div>
 
             <form action="submit_form.php" method="POST">
-                <label for="name">Name:</label><br>
-                <input type="text" id="name" name="name" required><br><br>
-            
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email" required><br><br>
-            
-                <label for="message">Message:</label><br>
-                <textarea id="message" name="message" rows="5" required></textarea><br><br>
-            
-                <input type="submit" value="Send Message">
-            </form>            
-            
-        </div>
-    </section>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" class="form-control" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-success">Send Message</button>
+            </form>
+        </section>
+    </div>
 
     <!-- Footer Section -->
-    <footer>
-        <div class="container">
+    <footer class="bg-light py-3">
+        <div class="container text-center">
             <p>&copy; 2024 Daniel Almanza - Portfolio</p>
         </div>
     </footer>
 
     <!-- JavaScript for sliding animation -->
     <script>
-
         window.addEventListener('load', function() {
             document.body.classList.add('loaded');
         });
     </script>
 
-    <!-- JavaScript Code (if needed) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> <!-- jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script> <!-- Popper.js -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> <!-- Bootstrap JS -->
     <script src="script.js"></script> <!-- Link to your JavaScript file -->
 </body>
 </html>

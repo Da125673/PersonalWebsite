@@ -220,3 +220,8 @@ label {
     text-align: center; /* Centers the text */
     margin-bottom: 20px; /* Optional: Adds space below the centered text */
 }
+
+/* Override Bootstrap navbar styles */
+.navbar {
+    background-color: #333; /* Your custom color */
+}
