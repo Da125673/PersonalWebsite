@@ -4,8 +4,6 @@ Contacts:
 
 Email: almanza_daniel@outlook.com
 
-Phone: (956)744-0431
-
 [linkedin](https://www.linkedin.com/in/daniel-almanza04/)
 
 [HandShake](https://app.joinhandshake.com/profiles/43360503)
